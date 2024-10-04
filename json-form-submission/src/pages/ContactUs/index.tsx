@@ -1,10 +1,37 @@
 import { FC } from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import axios from "axios";
 import Header from '../../components/Header';
 import './styles.css';
 import heroImg from '../../assets/hero-img.png'; 
 
 const Index: FC = () => { 
-  console.log("ContactUs component rendered");
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().required('Required'),
+      email: Yup.string().email('Invalid email format').required('Required'),
+      subject: Yup.string().required('Required'),
+      message: Yup.string().required('Required')
+    }),
+    onSubmit: async (values) => {
+      try {
+        await axios.post('http://localhost:3000/submissions', values);
+        alert("Submission successful!");
+        // Reset form values
+        formik.resetForm();
+      } catch (error) {
+        console.error("There was an error!", error);
+      }
+    },
+  });
+
   return (
     <div className="contact-us">
       <Header />
@@ -24,26 +51,61 @@ const Index: FC = () => {
             <p>Webflow</p>
           </div>
         </div>
-        <div className="message-form">
+        <form onSubmit={formik.handleSubmit} className="message-form">
           <h2>Let's build something cool together</h2>
           <div className="form-group">
             <label>Name</label>
-            <input type="text" placeholder="Adimas Barnwal" />
+            <input
+              type="text"
+              name="name"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.name}
+            />
+            {formik.touched.name && formik.errors.name ? (
+              <div className="error">{formik.errors.name}</div>
+            ) : null}
           </div>
           <div className="form-group">
             <label>Email</label>
-            <input type="email" placeholder="adimas.barnwal@brightscout.com" />
+            <input
+              type="email"
+              name="email"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
+            />
+            {formik.touched.email && formik.errors.email ? (
+              <div className="error">{formik.errors.email}</div>
+            ) : null}
           </div>
           <div className="form-group">
             <label>Subject</label>
-            <input type="text" placeholder="For web design work Enquire" />
+            <input
+              type="text"
+              name="subject"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.subject}
+            />
+            {formik.touched.subject && formik.errors.subject ? (
+              <div className="error">{formik.errors.subject}</div>
+            ) : null}
           </div>
           <div className="form-group">
             <label>Message</label>
-            <input type="text" placeholder="Type your Message" />
+            <textarea
+              name="message"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.message}
+            />
+            {formik.touched.message && formik.errors.message ? (
+              <div className="error">{formik.errors.message}</div>
+            ) : null}
           </div>
-          <button className="submit-button">Submit</button>
-        </div>
+          <button type="submit" className="submit-button">Submit</button>
+        </form>
       </div>
       <footer className="footer">
         <div className="footer-left">
@@ -51,11 +113,11 @@ const Index: FC = () => {
         </div>
         <div className="footer-right">
           <div className="social-media">
-          <a href="#" className="social-icon">LinkedIn</a>
+            <a href="#" className="social-icon">LinkedIn</a>
             <a href="#" className="social-icon">Instagram</a>
             <a href="#" className="social-icon">Twitter</a>
             <a href="#" className="social-icon">Webflow</a>
-        </div>
+          </div>
         </div>
       </footer>
     </div>

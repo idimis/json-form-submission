@@ -1,0 +1,26 @@
+{
+  "submissions": [
+    {
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "subject": "Interested in collaboration",
+      "message": "Hi, I would love to discuss a potential project with you. Can we set up a time to talk?",
+      "portfolioLink": "https://johndoeportfolio.com",
+      "id": "0ed9"
+    },
+    {
+      "id": "26da",
+      "name": "Hilman",
+      "email": "fufufafa@gmail.com",
+      "subject": "potensi kerjasama",
+      "message": "saatnya beli dogecoin"
+    },
+    {
+      "id": "4f07",
+      "name": "mulyono ",
+      "email": "mulyonohalohalo@gmail.com",
+      "subject": "pensiun  hari tua",
+      "message": "enak juga tinggal di desa"
+    }
+  ]
+}
