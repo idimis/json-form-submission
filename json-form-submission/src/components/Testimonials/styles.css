@@ -1,0 +1,80 @@
+.testimonials {
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding:20px;
+    box-sizing: border-box;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+
+    
+  }
+  
+  .testimonials-header {
+    flex-basis: 30%;
+  }
+  
+  .testimonials-title {
+    flex-basis: 30%;
+    font-family: 'Neue Montreal';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 48px;
+
+    color: #0B0C0E;
+  }
+  
+  .testimonials-container {
+    flex-basis: 70%; 
+    display: flex;
+    flex-direction: column; 
+    gap: 20px; 
+    
+  }
+  
+  .testimonial {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex; 
+    flex-direction: column; 
+  }
+  
+  .testimonial-text {
+    font-family: 'Neue Montreal';
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: black;
+    text-align: justify;
+  }
+  
+  .testimonial-profile {
+    display: flex; 
+    align-items: center; 
+    color: black;
+  }
+  
+  .testimonialsphoto {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; 
+    margin-right: 15px; 
+  }
+  
+  .testimonial-details {
+    display: flex;
+    flex-direction: column; 
+  }
+  
+  .contributor-name {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .contributor-position {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+  }
+  

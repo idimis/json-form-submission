@@ -1,0 +1,27 @@
+.overlay-menu {
+    position: fixed; 
+    top: 50%; 
+    right: 30px; 
+    color: white;
+    display: flex;
+    gap: 12px; 
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding: 20px 32px; 
+    border-radius: 50px; 
+    transition: transform 0.3s ease;
+    transform: translateY(-50%); 
+
+}
+.overlay-menu:hover {
+    transform: scale(1.1) translateY(-50%); 
+}
+
+.overlay-menu:nth-child(1) {
+    font-size: 112px; 
+}
+
+.overlay-menu:nth-child(2) {
+    font-size: 80px; 
+}

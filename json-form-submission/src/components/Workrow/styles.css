@@ -1,0 +1,56 @@
+.workrow-section {
+    position: relative;
+    padding: 40px 0; 
+}
+
+.workrow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; 
+}
+
+.workrow {
+    display: flex;
+    width: 200%; 
+    animation: move-left 40s linear infinite;  
+}
+
+.workrow-item {
+    flex: 0 0 auto; 
+    margin: 20px 10px; 
+    border-radius: 8px; 
+    border: 20px solid #aaa; 
+    height: 200px; 
+    width: 400px; 
+}  
+
+.workrow-item img {
+    display: block;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+
+@keyframes move-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+
+.workrow.motion-right {
+    display: flex;
+    width: 200%; 
+    animation: move-right 40s linear infinite; 
+}
+
+@keyframes move-right {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50%); } 
+}
+
+
+.workrow-container {
+    margin-bottom: 40px; 
+}

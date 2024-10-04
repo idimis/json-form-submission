@@ -1,0 +1,112 @@
+/* Portfolio/styles.css */
+
+.portfolio-section {
+    max-width: 1200px;         
+    margin: 0 auto;            
+    margin-top: 30px;          
+    margin-bottom: 30px;       
+    margin-left: 50px;         
+    margin-right: 400px;       
+    display: flex;             
+}
+
+.portfolio-header {
+    flex-basis: 100%;           
+    padding-left: 5px;
+}
+
+.portfolio-title {
+    font-family: 'Neue Montreal'; 
+    font-size: 40px;           
+    font-weight: 500;  
+    margin-left: 0;
+    color: #0B0C0E;            
+    text-align: left;
+}
+
+.work-list {
+    flex-basis: 70%;           
+    display: flex;             
+    flex-direction: column;    
+}
+
+.portfolio-item {
+    display: flex;             
+    justify-content: space-between; 
+    align-items: center;       
+    margin-bottom: 20px;       
+}
+
+.portfolio-info {
+    flex: 1;                   /* Allow info to take remaining space */
+    display: flex;             /* Use flexbox for info layout */
+    flex-direction: column;    /* Stack title and description */
+    margin-right:30px;
+}
+
+.company-name {
+    font-family: 'Neue Montreal'; 
+    font-size: 60px;           
+    font-weight: 500;          
+    color: #0B0C0E;            
+    margin: 0;                 
+}
+
+.work-description {
+    font-family: 'Neue Montreal'; 
+    font-size: 24px;           
+    font-weight: 400;          
+    line-height: 140%;         
+    color: #3C3D3E;            
+    margin-top: 5px;           
+}
+
+.arrow-button-container {
+    display: flex;                
+    justify-content: flex-end;    
+    margin-left: auto;            
+}
+
+.round-button {
+    width: 32px;                  
+    height: 32px;                 
+    border: 2px solid black;      
+    border-radius: 50%;           
+    display: flex;                
+    align-items: center;          
+    justify-content: center;      
+    background-color: transparent; 
+    cursor: pointer;              
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.arrow {
+    width: 0; 
+    height: 0; 
+    border-left: 8px solid transparent; 
+    border-right: 8px solid transparent; 
+    border-bottom: 16px solid black;     
+    transform: rotate(45deg);            
+    transition: border-bottom-color 0.3s; 
+}
+
+.round-button:hover {
+    background-color: black;          
+}
+
+.round-button:hover .arrow {
+    border-bottom-color: white;       
+}
+
+
+@media (max-width: 768px) {
+    .portfolio-title {
+        font-size: 32px; 
+    }
+    .company-name {
+        font-size: 40px; 
+    }
+    .work-description {
+        font-size: 20px; 
+    }
+}

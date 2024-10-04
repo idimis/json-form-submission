@@ -1,0 +1,33 @@
+.nav-container {
+    position: static; 
+    width: calc(100% - 160px); 
+    max-width: 1200px; 
+    padding: 26px 40px; 
+    box-sizing: border-box; 
+    margin: 0 auto; 
+    z-index: 2; 
+}
+
+.nav-container nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    font-size: 25px;
+    font-weight: 400;
+    width: 100%; 
+}
+
+.nav-list {
+    display: flex;
+    gap: 40px; 
+    margin-left: auto;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-list a:hover {
+    color: #007BFF; 
+}
